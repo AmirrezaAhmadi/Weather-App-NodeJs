@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Website</title>
-    <link rel="stylesheet" href="Css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Weather App</title>
+  <link rel="stylesheet" href="Css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">Weather in Your City</h1>
-        <div class="weather-box">
-            <div class="weather-info">
-                <h2 id="city">City Name</h2>
-                <p id="description">Weather Condition</p>
-                <p id="temperature">20°C</p>
-                <p id="wind">Wind Speed: 10 km/h</p>
-            </div>
-            <div class="weather-icon">
-                <img id="icon" src="https://cdn-icons-png.flaticon.com/512/1163/1163661.png" alt="weather icon">
-            </div>
+  <div class="background-overlay"></div>
+  <div class="container">
+    <h1 class="title">Weather in Your City</h1>
+
+    <% if (error) { %>
+      <div class="error-message">
+        <p><%= error %></p>
+      </div>
+    <% } %>
+
+    <% if (city && temp && wind && icon) { %> 
+      <div class="weather-box card">
+        <div class="weather-info">
+          <h2 id="city"><%= city %></h2>
+          <p id="description">Weather Condition</p>
+          <p id="temperature"><%= temp %>°C</p>
+          <p id="wind">Wind Speed: <%= wind %> km/h</p>
         </div>
-        <div class="search-box">
-            <input type="text" id="cityInput" placeholder="Enter city name">
-            <button onclick="">Get Weather</button>
+        <div class="weather-icon">
+          <img id="icon" src="<%= icon %>" alt="weather icon">
         </div>
+      </div>
+    <% } else if (!error) { %>
+      <p class="no-data">Please search for a city to get weather information.</p>
+    <% } %>
+
+    <div class="search-box">
+      <form action="/getweather" method="POST">
+        <input type="text" id="cityInput" name="city" placeholder="Enter city name">
+        <button type="submit" class="btn">Get Weather</button>
+      </form>
     </div>
-    <script src="Javascript/script.js"></script>
+  </div>
+  <script src="Javascript/script.js"></script>
 </body>
 </html>
