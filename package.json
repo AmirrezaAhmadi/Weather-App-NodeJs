@@ -6,8 +6,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmirrezaAhmadi/Weather-App-NodeJs.git.git"
+  },
+  "author": "AmirrezaAhmadi",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmirrezaAhmadi/Weather-App-NodeJs.git/issues"
+  },
+  "homepage": "https://github.com/AmirrezaAhmadi/Weather-App-NodeJs.git#readme",
   "description": "",
   "dependencies": {
     "axios": "^1.7.7",
