@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modern Weather App</title>
-  <link rel="stylesheet" href="Css/styles.css">
+  <link rel="stylesheet" href="/Css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   <div class="background-overlay"></div>
@@ -36,11 +37,12 @@
 
     <div class="search-box">
       <form action="/getweather" method="POST">
-        <input type="text" id="cityInput" name="city" placeholder="Enter city name">
+        <input type="text" id="cityInput" name="city" placeholder="Enter city name" autocomplete="off">
+        <ul id="suggestions" class="autocomplete-suggestions"></ul>
         <button type="submit" class="btn">Get Weather</button>
       </form>
     </div>
   </div>
-  <script src="Javascript/script.js"></script>
+  <script src="/Javascript/script.js"></script>
 </body>
 </html>
