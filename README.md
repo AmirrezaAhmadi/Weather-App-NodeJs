@@ -55,7 +55,7 @@ You will also need API keys for:
 
 ### Step 1: Clone the repository
 ```bash
-git https://github.com/AmirrezaAhmadi/Weather-App-NodeJs.git
+git clone https://github.com/AmirrezaAhmadi/Weather-App-NodeJs.git
 cd WeatherApp
 ```
 
